@@ -1,0 +1,312 @@
+{
+  "statistiques": {
+    "totalVentes": 1247.5,
+    "totalDepense": 580.24,
+    "benefice": 667.26,
+    "nombreClients": 10,
+    "nombreCommandes": 540,
+    "nombreProduits": 18,
+    "produitPlusVendu": {
+      "nom": "Coca Cola",
+      "quantite": 89
+    },
+    "heureMoyenneCommande": "12:49",
+    "moyenneEurosParCommande": 2.31,
+    "meilleurePromo": "B.ENG 3"
+  },
+  "repartitionPaiements": [
+    {
+      "type": "Carte bancaire",
+      "pourcentage": 45
+    },
+    {
+      "type": "HelloAsso",
+      "pourcentage": 35
+    },
+    {
+      "type": "Espèces",
+      "pourcentage": 20
+    }
+  ],
+  "ventesParMois": [
+    {
+      "mois": "Oct 2024",
+      "montant": 156.8
+    },
+    {
+      "mois": "Nov 2024",
+      "montant": 234.5
+    },
+    {
+      "mois": "Déc 2024",
+      "montant": 312.4
+    },
+    {
+      "mois": "Jan 2025",
+      "montant": 198.6
+    },
+    {
+      "mois": "Fév 2025",
+      "montant": 178.9
+    },
+    {
+      "mois": "Mar 2025",
+      "montant": 166.3
+    }
+  ],
+  "utilisateurs": [
+    {
+      "id": 1,
+      "nomComplet": "Coustenoble Andrea",
+      "email": "andrea.coustenoble@supinfo.com",
+      "promo": "B.ENG 3",
+      "codeAdherent": "2105",
+      "points": 0,
+      "estAdmin": false
+    },
+    {
+      "id": 2,
+      "nomComplet": "Crocquevieille Martin",
+      "email": "martin.crocquevieille@supinfo.com",
+      "promo": "B.ENG 3",
+      "codeAdherent": "5050",
+      "points": 0,
+      "estAdmin": true
+    },
+    {
+      "id": 3,
+      "nomComplet": "De bailliencourt Lucas",
+      "email": "lucas.de-bailliencourt@supinfo.com",
+      "promo": "B.ENG 3",
+      "codeAdherent": "1397",
+      "points": 1,
+      "estAdmin": false
+    },
+    {
+      "id": 4,
+      "nomComplet": "Franchet Julien",
+      "email": "julien.franchet@supinfo.com",
+      "promo": "B.ENG 3",
+      "codeAdherent": "2120",
+      "points": 0,
+      "estAdmin": true
+    },
+    {
+      "id": 5,
+      "nomComplet": "Gesret Evan",
+      "email": "evan.gesret@supinfo.com",
+      "promo": "B.ENG 3",
+      "codeAdherent": "1846",
+      "points": 0,
+      "estAdmin": true
+    },
+    {
+      "id": 6,
+      "nomComplet": "Mahe Andrew",
+      "email": "andrew.mahe@supinfo.com",
+      "promo": "B.ENG 1",
+      "codeAdherent": "1234",
+      "points": 0,
+      "estAdmin": true
+    },
+    {
+      "id": 7,
+      "nomComplet": "Morel Lucas",
+      "email": "lucas.morel@supinfo.com",
+      "promo": "B.ENG 3",
+      "codeAdherent": "1739",
+      "points": 0,
+      "estAdmin": false
+    },
+    {
+      "id": 8,
+      "nomComplet": "Nicolas Axel",
+      "email": "axel.nicolas@supinfo.com",
+      "promo": "B.ENG 1",
+      "codeAdherent": "2511",
+      "points": 0,
+      "estAdmin": false
+    },
+    {
+      "id": 9,
+      "nomComplet": "T'sjoen Anthonin",
+      "email": "anthonin.t-sjoen@supinfo.com",
+      "promo": "B.ENG 2",
+      "codeAdherent": "1278",
+      "points": 0,
+      "estAdmin": true
+    },
+    {
+      "id": 10,
+      "nomComplet": "Teyar Anbarine",
+      "email": "anbarine.teyar@supinfo.com",
+      "promo": "B.ENG 3",
+      "codeAdherent": "3547",
+      "points": 0,
+      "estAdmin": true
+    }
+  ],
+  "produits": [
+    {
+      "id": 1,
+      "nom": "2 balisto miel amande",
+      "prix": 0.7,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?chocolate,bar"
+    },
+    {
+      "id": 2,
+      "nom": "2 barres kinder country",
+      "prix": 1.1,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?kinder,chocolate"
+    },
+    {
+      "id": 3,
+      "nom": "2 barres twix",
+      "prix": 0.8,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?twix,chocolate"
+    },
+    {
+      "id": 4,
+      "nom": "2 Napolitain",
+      "prix": 0.75,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?cake,snack"
+    },
+    {
+      "id": 5,
+      "nom": "Balisto muesli",
+      "prix": 0.7,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?cereal,bar"
+    },
+    {
+      "id": 6,
+      "nom": "Coca cherry",
+      "prix": 0.85,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?coca-cola,drink"
+    },
+    {
+      "id": 7,
+      "nom": "Coca Cola",
+      "prix": 0.8,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?coca-cola"
+    },
+    {
+      "id": 8,
+      "nom": "Coca zéro",
+      "prix": 0.8,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?cola,zero"
+    },
+    {
+      "id": 9,
+      "nom": "Fanta citron",
+      "prix": 0.8,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?lemon,soda"
+    },
+    {
+      "id": 10,
+      "nom": "Fanta orange",
+      "prix": 0.8,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?orange,soda"
+    },
+    {
+      "id": 11,
+      "nom": "Haribo Dragibus",
+      "prix": 0.6,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?candy,gummy"
+    },
+    {
+      "id": 12,
+      "nom": "Haribo Tagada",
+      "prix": 0.6,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?strawberry,candy"
+    },
+    {
+      "id": 13,
+      "nom": "Ice Tea pêche",
+      "prix": 0.8,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?iced-tea,peach"
+    },
+    {
+      "id": 14,
+      "nom": "Kit Kat",
+      "prix": 0.9,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?kitkat,chocolate"
+    },
+    {
+      "id": 15,
+      "nom": "M&M's",
+      "prix": 1.0,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?m&m,chocolate"
+    },
+    {
+      "id": 16,
+      "nom": "Oasis tropical",
+      "prix": 0.8,
+      "actif": true,
+      "image": "https://placehold.co/400x300?text=Balisto"
+    },
+    {
+      "id": 17,
+      "nom": "Snickers",
+      "prix": 0.95,
+      "actif": true,
+      "image": "https://source.unsplash.com/400x300/?snickers,chocolate"
+    },
+    {
+      "id": 18,
+      "nom": "Sprite",
+      "prix": 0.8,
+      "actif": false,
+      "image": "https://source.unsplash.com/400x300/?lemon,lime,soda"
+    }
+  ],
+  "carteFidelite": {
+    "nombreTampons": 8,
+    "recompense": "1 produit offert dans la boutique de snack"
+  },
+  "topClients": {
+    "parCommandes": [
+      {
+        "nom": "Gesret Evan",
+        "nombreCommandes": 38
+      },
+      {
+        "nom": "Franchet Julien",
+        "nombreCommandes": 27
+      },
+      {
+        "nom": "Crocquevieille Martin",
+        "nombreCommandes": 24
+      }
+    ],
+    "parProduits": [
+      {
+        "nom": "Gesret Evan",
+        "nombreProduits": 56
+      },
+      {
+        "nom": "Mahe Andrew",
+        "nombreProduits": 42
+      },
+      {
+        "nom": "Teyar Anbarine",
+        "nombreProduits": 35
+      }
+    ]
+  },
+  "commandes": []
+}
