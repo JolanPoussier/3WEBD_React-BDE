@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { Card } from './Card';
@@ -10,7 +10,7 @@ const Backdrop = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(31, 41, 55, 0.35);
   backdrop-filter: blur(4px);
   z-index: 999;
   display: flex;
@@ -80,8 +80,6 @@ interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
-  // const theme = useTheme();
-
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();

@@ -78,16 +78,17 @@ const UsersPage: React.FC = () => {
 
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentUser, setCurrentUser] = useState<Partial<User>>({});
+  const [selectedUser, setSelectedUser] = useState<Partial<User>>({});
   const [isEditing, setIsEditing] = useState(false);
 
   // Extract unique promos for filter
   const promos = useMemo(
-    () => [...new Set(users.map((u) => u.promo))].filter(Boolean).sort(),
+    () => Array.from(new Set(users.map((u) => u.promo))).filter(Boolean).sort(),
     [users]
   );
 
   const filteredUsers = useMemo(() => {
+    // Always show all users here; sidebar controls access to the page link
     return users.filter((user) => {
       const matchesSearch =
         user.nomComplet.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -114,13 +115,13 @@ const UsersPage: React.FC = () => {
 
   const handleEdit = (user: User) => {
     setIsEditing(true);
-    setCurrentUser(user);
+    setSelectedUser(user);
     setIsModalOpen(true);
   };
 
   const handleAdd = () => {
     setIsEditing(false);
-    setCurrentUser({
+    setSelectedUser({
       nomComplet: "",
       email: "",
       promo: "",
@@ -133,13 +134,15 @@ const UsersPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (isEditing && currentUser.id) {
+    if (isEditing && selectedUser.id) {
       setUsers(
-        users.map((u) => (u.id === currentUser.id ? (currentUser as User) : u))
+        users.map((u) =>
+          u.id === selectedUser.id ? (selectedUser as User) : u
+        )
       );
     } else {
       const newId = Math.max(...users.map((u) => u.id), 0) + 1;
-      setUsers([...users, { ...currentUser, id: newId } as User]);
+      setUsers([...users, { ...selectedUser, id: newId } as User]);
     }
     setIsModalOpen(false);
   };
@@ -307,9 +310,9 @@ const UsersPage: React.FC = () => {
             <Input
               type="text"
               required
-              value={currentUser.nomComplet || ""}
+              value={selectedUser.nomComplet || ""}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setCurrentUser({ ...currentUser, nomComplet: e.target.value })
+                setSelectedUser({ ...selectedUser, nomComplet: e.target.value })
               }
             />
           </FormGroup>
@@ -318,9 +321,9 @@ const UsersPage: React.FC = () => {
             <Input
               type="email"
               required
-              value={currentUser.email || ""}
+              value={selectedUser.email || ""}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setCurrentUser({ ...currentUser, email: e.target.value })
+                setSelectedUser({ ...selectedUser, email: e.target.value })
               }
             />
           </FormGroup>
@@ -336,9 +339,9 @@ const UsersPage: React.FC = () => {
               <Input
                 type="text"
                 placeholder="ex: M1"
-                value={currentUser.promo || ""}
+                value={selectedUser.promo || ""}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setCurrentUser({ ...currentUser, promo: e.target.value })
+                  setSelectedUser({ ...selectedUser, promo: e.target.value })
                 }
               />
             </FormGroup>
@@ -346,10 +349,10 @@ const UsersPage: React.FC = () => {
               <Label>Code Adhérent</Label>
               <Input
                 type="text"
-                value={currentUser.codeAdherent || ""}
+                value={selectedUser.codeAdherent || ""}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setCurrentUser({
-                    ...currentUser,
+                  setSelectedUser({
+                    ...selectedUser,
                     codeAdherent: e.target.value,
                   })
                 }
@@ -367,10 +370,10 @@ const UsersPage: React.FC = () => {
               <Label>Points</Label>
               <Input
                 type="number"
-                value={currentUser.points || 0}
+                value={selectedUser.points || 0}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setCurrentUser({
-                    ...currentUser,
+                  setSelectedUser({
+                    ...selectedUser,
                     points: parseInt(e.target.value) || 0,
                   })
                 }
@@ -379,10 +382,10 @@ const UsersPage: React.FC = () => {
             <FormGroup>
               <Label>Rôle</Label>
               <Select
-                value={currentUser.estAdmin ? "admin" : "member"}
+                value={selectedUser.estAdmin ? "admin" : "member"}
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                  setCurrentUser({
-                    ...currentUser,
+                  setSelectedUser({
+                    ...selectedUser,
                     estAdmin: e.target.value === "admin",
                   })
                 }

@@ -15,6 +15,19 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
+
+  > * {
+    animation-delay: 80ms;
+  }
+  > *:nth-child(2) {
+    animation-delay: 140ms;
+  }
+  > *:nth-child(3) {
+    animation-delay: 200ms;
+  }
+  > *:nth-child(4) {
+    animation-delay: 260ms;
+  }
 `;
 
 const ChartsGrid = styled.div`
@@ -22,12 +35,26 @@ const ChartsGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
+
+  > *:nth-child(1) {
+    animation-delay: 180ms;
+  }
+  > *:nth-child(2) {
+    animation-delay: 240ms;
+  }
 `;
 
 const TopListGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+
+  > *:nth-child(1) {
+    animation-delay: 260ms;
+  }
+  > *:nth-child(2) {
+    animation-delay: 320ms;
+  }
 `;
 
 const TopList = styled.div`
@@ -43,6 +70,35 @@ const TopItem = styled.div`
   &:last-child {
     border-bottom: none;
   }
+`;
+
+const FeaturedWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  flex-direction: column;
+  gap: 0.35rem;
+`;
+
+const FeaturedIcon = styled.div`
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: ${({ theme }) => theme.colors.primary}1a;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 0.35rem;
+`;
+
+const FeaturedName = styled.h2`
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
+const FeaturedMeta = styled.span`
+  color: ${({ theme }) => theme.colors.textSoft};
+  font-size: 0.9rem;
 `;
 
 const Dashboard: React.FC = () => {
@@ -108,11 +164,13 @@ const Dashboard: React.FC = () => {
                 </Card>
                 <Card>
                     <h3>Produit Star</h3>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', flexDirection: 'column' }}>
-                        <ShoppingCart size={48} color="#009FE3" style={{ marginBottom: '1rem' }} />
-                        <h2 style={{ color: '#1e293b' }}>{stats.statistiques.produitPlusVendu.nom}</h2>
-                        <span style={{ color: '#64748b' }}>{stats.statistiques.produitPlusVendu.quantite} vendus</span>
-                    </div>
+                    <FeaturedWrap>
+                        <FeaturedIcon>
+                            <ShoppingCart size={28} />
+                        </FeaturedIcon>
+                        <FeaturedName>{stats.statistiques.produitPlusVendu.nom}</FeaturedName>
+                        <FeaturedMeta>{stats.statistiques.produitPlusVendu.quantite} vendus</FeaturedMeta>
+                    </FeaturedWrap>
                 </Card>
             </TopListGrid>
         </div>

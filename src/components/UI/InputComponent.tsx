@@ -6,6 +6,8 @@ export const Input = styled.input`
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.borderRadius.md};
   font-family: ${({ theme }) => theme.fonts.body};
+  background: ${({ theme }) => theme.colors.surface};
+  color: ${({ theme }) => theme.colors.text};
   width: 100%;
   transition: ${({ theme }) => theme.transitions.fast};
   box-sizing: border-box;
@@ -23,6 +25,7 @@ export const Select = styled.select`
   border-radius: ${({ theme }) => theme.borderRadius.md};
   font-family: ${({ theme }) => theme.fonts.body};
   background-color: ${({ theme }) => theme.colors.surface};
+  color: ${({ theme }) => theme.colors.text};
   cursor: pointer;
   transition: ${({ theme }) => theme.transitions.fast};
 

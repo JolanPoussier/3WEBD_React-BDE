@@ -17,6 +17,7 @@ const IconWrapper = styled.div<IconWrapperProps>`
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+  border: 1px solid ${({ theme, color }) => color ? `${color}33` : theme.colors.primary + '33'};
 `;
 
 const Value = styled.div`
@@ -24,6 +25,7 @@ const Value = styled.div`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.secondary};
   margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
 `;
 
 const Label = styled.div`

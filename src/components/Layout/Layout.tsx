@@ -2,6 +2,7 @@ import { Menu } from "lucide-react";
 import React, { ReactNode, useState } from "react";
 import styled from "styled-components";
 import Sidebar from "./Sidebar";
+import UserSelector from "./UserSelector";
 
 const TopBar = styled.header`
   display: none;
@@ -10,6 +11,7 @@ const TopBar = styled.header`
   padding: 0.75rem 1rem;
   background: ${({ theme }) => theme.colors.surface};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  box-shadow: ${({ theme }) => theme.shadows.sm};
 
   @media (max-width: 900px) {
     display: flex;
@@ -25,6 +27,7 @@ const MainContent = styled.main<{ sidebarOpen: boolean }>`
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+  animation: fadeUp 420ms ease both;
 
   @media (max-width: 900px) {
     margin-left: 0;
@@ -58,7 +61,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div style={{ fontWeight: 700 }}>
           {/* espace pour logo si besoin */}
         </div>
-        <div />
+        <div>
+          {/* User selector for testing roles */}
+          <UserSelector />
+        </div>
       </TopBar>
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <MainContent

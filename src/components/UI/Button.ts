@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface ButtonProps {
-    variant?: 'primary' | 'outline' | 'danger';
+  variant?: "primary" | "outline" | "danger";
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -9,28 +9,28 @@ export const Button = styled.button<ButtonProps>`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: ${({ variant, theme }) =>
-        variant === 'outline' ? 'transparent' :
-            variant === 'danger' ? theme.colors.danger :
-                theme.colors.primary};
+  padding: 0.7rem 1.25rem;
+  background: ${({ variant, theme }) =>
+    variant === "outline"
+      ? "transparent"
+      : variant === "danger"
+      ? `linear-gradient(180deg, ${theme.colors.danger}, ${theme.colors.danger})`
+      : `linear-gradient(180deg, ${theme.colors.primary}, ${theme.colors.primaryDark})`};
   color: ${({ variant, theme }) =>
-        variant === 'outline' ? theme.colors.primary : '#fff'};
+    variant === "outline" ? theme.colors.primary : "#ffffff"};
   border: ${({ variant, theme }) =>
-        variant === 'outline' ? `2px solid ${theme.colors.primary}` : 'none'};
-  border-radius: ${({ theme }) => theme.borderRadius.md};
-  font-weight: 600;
-  transition: ${({ theme }) => theme.transitions.fast};
-  
+    variant === "outline" ? `2px solid ${theme.colors.primary}` : "none"};
+  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  font-weight: 700;
+  box-shadow: ${({ theme }) => theme.shadows.md};
+  transition: ${({ theme }) => theme.transitions.default};
+
   &:hover {
-    transform: translateY(-1px);
-    box-shadow: ${({ theme }) => theme.shadows.md};
-    background-color: ${({ variant, theme }) =>
-        variant === 'outline' ? theme.colors.primary + '10' :
-            variant === 'danger' ? theme.colors.danger + 'dd' :
-                theme.colors.primaryDark};
+    transform: translateY(-3px);
+    box-shadow: ${({ theme }) => theme.shadows.lg};
+    opacity: 0.96;
   }
-  
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;

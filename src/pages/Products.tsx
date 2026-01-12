@@ -12,6 +12,7 @@ import { Card, PageHeader } from "../components/UI/Card";
 import { Input, Select } from "../components/UI/Input";
 import { Modal } from "../components/UI/Modal";
 import { ActionButton, Badge } from "../components/UI/Table";
+import { useAuth } from "../context/AuthContext";
 import rawData from "../data.json";
 import { Data, Product } from "../types";
 import "./Products.css"; // Importing CSS for styling
@@ -97,6 +98,8 @@ const ProductsPage: React.FC = () => {
       return matchesSearch && matchesStatus;
     });
   }, [products, searchTerm, statusFilter]);
+
+  const { currentUser } = useAuth();
 
   // Pagination
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
@@ -215,19 +218,23 @@ const ProductsPage: React.FC = () => {
                     </div>
                   </div>
                   <div style={{ display: "flex", gap: "0.5rem" }}>
-                    <ActionButton
-                      onClick={() => handleEdit(product)}
-                      title="Éditer"
-                    >
-                      <Edit2 size={18} />
-                    </ActionButton>
-                    <ActionButton
-                      onClick={() => handleDelete(product.id)}
-                      title="Supprimer"
-                      color={theme.colors.danger}
-                    >
-                      <Trash2 size={18} />
-                    </ActionButton>
+                    {currentUser?.estAdmin ? (
+                      <>
+                        <ActionButton
+                          onClick={() => handleEdit(product)}
+                          title="Éditer"
+                        >
+                          <Edit2 size={18} />
+                        </ActionButton>
+                        <ActionButton
+                          onClick={() => handleDelete(product.id)}
+                          title="Supprimer"
+                          color={theme.colors.danger}
+                        >
+                          <Trash2 size={18} />
+                        </ActionButton>
+                      </>
+                    ) : null}
                   </div>
                 </div>
               </Card>
