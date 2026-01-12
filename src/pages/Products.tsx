@@ -157,10 +157,12 @@ const ProductsPage: React.FC = () => {
           <h1>Liste des Produits</h1>
           <p>Gérez le catalogue des snacks et boissons</p>
         </PageHeader>
-        <Button onClick={handleAdd}>
-          <Plus size={20} />
-          Nouveau Produit
-        </Button>
+        {currentUser?.estAdmin && (
+          <Button onClick={handleAdd}>
+            <Plus size={20} />
+            Nouveau Produit
+          </Button>
+        )}
       </div>
 
       <FilterBar>
